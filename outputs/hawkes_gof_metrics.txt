@@ -1,0 +1,27 @@
+Loaded 19422 flares across 2269 TICs, 14910 windows.
+
+Sanity check (alpha->0 should match pure-Poisson log-likelihood):
+  direct Poisson ll = -56681.099
+  Hawkes(alpha~0) ll = -56681.099
+  difference = 0.0000 (should be ~0)
+
+--- Hawkes fit (shared mu, alpha, beta across all stars) ---
+Converged: True, 14 iterations, 16.6s
+mu_hat    = 0.08295 flares/day (background rate)
+alpha_hat = 0.05078 flares/day (excitation jump size)
+beta_hat  = 0.08030 /day  (excitation decay rate; timescale 1/beta = 12.4526 d = 298.86 h)
+branching ratio alpha/beta = 0.6324  (STATIONARY)
+log-likelihood = -54285.66  (vs Poisson-only: -56681.10)
+Likelihood-ratio test vs Poisson (2 extra params): stat = 4790.88, p = 0.000e+00
+AIC: Poisson = 113364.2, Hawkes = 108577.3  (delta = -4786.9, more negative favors Hawkes)
+
+--- Time-rescaling test (Hawkes) ---
+N residuals          = 18885
+mean(z), var(z)      = 0.8420, 0.6917  (Exp(1): both = 1)
+KS test vs Exp(1)    : D = 0.0636, p = 7.876e-67
+  -> Hawkes process is REJECTED at alpha=0.05
+
+Adjacent same-star pairs = 16140
+Lag-1 Pearson corr of u_i=1-exp(-z_i) = 0.0278  (0 expected under independence; Poisson baseline was +0.224)
+
+Wrote 18885 Hawkes time-rescaled residuals to outputs/hawkes_residuals.csv

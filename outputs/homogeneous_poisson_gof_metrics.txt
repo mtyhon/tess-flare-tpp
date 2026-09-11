@@ -1,0 +1,29 @@
+=== Homogeneous Poisson fit: lambda(t) = mu ===
+
+--- Global fit (single mu for the whole catalog) ---
+N events (clean)      = 18885
+Total exposure (days) = 126221.00
+mu_hat                = 0.14962 flares/day  (mean wait 1/mu = 6.684 d)
+mean(z), var(z)       = 0.8403, 1.0485  (Exp(1): both = 1)
+KS test vs Exp(1)     : D = 0.1384, p = 3.995e-316
+  -> homogeneous Poisson (global mu) is REJECTED at alpha=0.05
+
+--- Counterexample: naive calendar-time rescaling (np.diff(T_peak), no window correction) ---
+mu_hat (naive)        = 0.07135 flares/day
+mean(z), var(z)       = 0.9211, 20.9173
+KS test vs Exp(1)     : D = 0.3143, p = 0.000e+00
+  -> included only to show the effect of skipping exposure correction; not a candidate model
+
+--- Per-star fit (mu_TIC = N_TIC / E_TIC, stars with >= 3 clean events), residuals pooled ---
+Stars used            = 1287
+N residuals pooled    = 17499
+mean(z), var(z)       = 0.9347, 0.9372
+KS test vs Exp(1)     : D = 0.0520, p = 1.454e-41
+  -> homogeneous Poisson (per-star mu, pooled residuals) is REJECTED at alpha=0.05
+  -> this isolates within-star temporal structure from between-star rate heterogeneity; a rejection here is the stronger evidence for self-excitation / clustering.
+
+--- Independence check (global-mu residuals) ---
+Adjacent same-star pairs = 16140
+Lag-1 Pearson corr of u_i=1-exp(-z_i) = 0.2243  (0 expected under independence)
+
+Wrote 18885 time-rescaled residuals to outputs/homogeneous_poisson_residuals.csv

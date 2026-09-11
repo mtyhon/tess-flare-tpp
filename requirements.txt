@@ -1,10 +1,7 @@
-torch
 numpy
+pandas
+scipy
+astropy
 matplotlib
-scikit-learn
 jupyter
 ipykernel
-scipy
-umap-learn
-pandas
-astropy

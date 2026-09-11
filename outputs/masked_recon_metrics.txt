@@ -1,2 +1,0 @@
-val_mse_heldout=0.2812
-probe={'probe_corr': 0.7692249994220022, 'probe_r2': 0.5885581484338693}

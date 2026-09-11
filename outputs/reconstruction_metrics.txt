@@ -1,3 +1,0 @@
-val_mse=0.1053
-val_corr=0.8928
-linear_probe={'probe_corr': 0.6650007239821883, 'probe_r2': 0.4350932253996742, 'n_fit': 250, 'n_test': 250}

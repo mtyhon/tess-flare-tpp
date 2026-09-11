@@ -1,5 +1,0 @@
-val_mse=0.2233
-val_corr=0.8555
-target_var=0.8330
-attn_sanity_report=[{'within_range': np.float64(1.0), 'frac_matches_latest': np.float64(0.28125)}, {'within_range': np.float64(1.0), 'frac_matches_latest': np.float64(0.4375)}, {'within_range': np.float64(1.0), 'frac_matches_latest': np.float64(0.03125)}, {'within_range': np.float64(1.0), 'frac_matches_latest': np.float64(0.0)}]
-period_vs_fixation={'pearson_r_period_sharpness': -0.017723650757192615, 'spearman_r_period_sharpness': -0.013187956751827008, 'spearman_p_period_sharpness': 0.768630760072103, 'pointbiserial_r_match_period': -0.005896350367213057, 'pointbiserial_p_match_period': 0.8953659043661278, 'overall_match_latest_rate': 0.57}
